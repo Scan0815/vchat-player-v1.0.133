@@ -1,0 +1,35 @@
+import { IPlayer } from '../../iplayer';
+import { SourceSet } from 'vchat-core';
+export declare class WebRTCPlayer implements IPlayer {
+    el: HTMLElement[];
+    readonly name = "WebRTC";
+    readonly canPublish? = false;
+    private _peerConnection;
+    private _closingConnection;
+    private _videoElement;
+    private _socket;
+    constructor(video: HTMLVideoElement);
+    play(sourceSet: SourceSet): void;
+    stop(): void;
+    destroy(): HTMLVideoElement;
+    setVolume(volume: number): void;
+    close(): void;
+    private _closeSignalingConnection;
+    private _openDataConnection;
+    private _attachStreamToVideo;
+    private _peerConnectionStateChanged;
+    private _iceCandidate;
+    private _sendWebRtcIceCandidate;
+    private _changeStreamQuality;
+    private _sendWebRtcNoMoreCandidates;
+    private _openSignalingConnection;
+    private _onopen;
+    private _requestChat;
+    private _dispatchCommand;
+    private _onmessage;
+    private _handleWebRtcOffer;
+    private _sendWebRtcAnswer;
+    private _onerror;
+    private _onclose;
+    private _closeDataConnection;
+}
